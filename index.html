@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Calender</title>
+    <link rel="stylesheet" href="css/evo-calendar.css" />
+    <link rel="stylesheet" href="css/evo-calendar.midnight-blue.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <center>
+        <img src="image/logo-of-ieee.jfif" alt="Logo Of IEEE" class="img-fluid" />
+    </center>
+    <div class="header">
+        <div id="calendar"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/evo-calendar.js"></script>
+    <script>
+        // Disabling Functionality
+        document.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+        });
+
+        document.onkeydown = function(e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == "I".charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {
+                return false;
+            }
+        };
+
+        $(document).ready(function() {
+            $("#calendar").evoCalendar({
+                theme: "Midnight Blue",
+
+                calendarEvents: [{
+                    id: "ieeeEvent2021jan1",
+                    name: "Webinar",
+                    description: "Webinar on IEEE Orientation 2021",
+                    date: "January/11/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021feb1",
+                    name: "Workshop",
+                    description: 'Workshop on "Mastering C" 1st Day',
+                    date: "February/20/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021feb2",
+                    name: "Workshop",
+                    description: 'Workshop on "Mastering C" 2nd Day',
+                    date: "February/21/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021mar1",
+                    name: "Workshop",
+                    description: 'Workshop on "Software Development using Cloud Services"',
+                    date: "March/10/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021apr1",
+                    name: "Coding Competition",
+                    description: "FRESHCODE 1.0 – Coding Competition (round 1)",
+                    date: "April/24/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021apr2",
+                    name: "Coding Competition",
+                    description: "FRESHCODE 1.0 – Coding Competition (round 2)",
+                    date: "April/25/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021apr3",
+                    name: "Interactive Session",
+                    description: "To Pave the Path of coding journey with Arsh Mahajan CSE department (4th year) IIT - Patna",
+                    date: "04/30/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021may1",
+                    name: "Coding Competition",
+                    description: "FRESHCODE 1.0 – Coding Competition (round 3)",
+                    date: "May/01/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021may2",
+                    name: "Webinar",
+                    description: "Webinar On Engineering Optimization Using Bio-Inspired Swarm Optimization Techniques",
+                    date: "May/31/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021june1",
+                    name: "Bootcamp",
+                    description: "UI / UX Bootcamp",
+                    date: "June/14/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021july1",
+                    name: "iQuest",
+                    description: "National level project competition iQuest 1st Day",
+                    date: "July/16/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021july2",
+                    name: "iQuest",
+                    description: "National level project competition iQuest 2st Day",
+                    date: "July/17/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "ieeeEvent2021aug1",
+                    name: "Workshop",
+                    description: "Embedded Code Generation for Engineers using MATLAB",
+                    date: "August/21/2021",
+                    type: "holiday",
+                    everyYear: false,
+                    color: "hotpink",
+                }, {
+                    id: "januaryevent1", // Event's ID (required)
+                    name: "Global Family Day", // Event name (required)
+                    date: "January/1/2021", // Event date (required)
+                    type: "holiday", // Event type (required)
+                    everyYear: true, // Same event every year (optional)
+                }, {
+                    id: "januaryevent2",
+                    name: "World Laughter Day",
+                    date: "January/10/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "januaryevent3",
+                    name: "National Army Day",
+                    date: "January/15/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "januaryevent4",
+                    name: "Republic Day of India",
+                    date: "January/26/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "januaryevent5",
+                    name: "National Youth Day",
+                    date: "January/12/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "januaryevent6",
+                    name: "Data Protection Day",
+                    date: "January/28/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "januaryevent7",
+                    name: "National Voters Day",
+                    date: "January/25/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "februaryevent1",
+                    name: "World Cancer Day",
+                    date: "February/04/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "februaryevent2",
+                    name: "World Social Justice Day",
+                    date: "February/20/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "februaryevent3",
+                    name: "World Peace Day",
+                    date: "February/23/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "februaryevent4",
+                    name: "National Science Day",
+                    date: "February/28/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "februaryevent5",
+                    name: "Mother Language Day",
+                    date: "February/21/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "februaryevent6",
+                    name: "World Scout Day",
+                    date: "February/22/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "februaryevent7",
+                    name: "Central Excise Day",
+                    date: "February/24/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "marchevent1",
+                    name: "National Defence Day",
+                    date: "March/03/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "marchevent2",
+                    name: "Women’s Day",
+                    date: "March/08/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "marchevent3",
+                    name: "Consumer Rights Day",
+                    date: "March/15/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "marchevent4",
+                    name: "Vaccination Day",
+                    date: "March/16/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "marchevent5",
+                    name: "World Forestry Day",
+                    date: "March/21/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "marchevent6",
+                    name: "World Water Day",
+                    date: "March/22/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "marchevent7",
+                    name: "National Safety Day",
+                    date: "March/04/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "aprilevent2",
+                    name: "World Heritage Day",
+                    date: "April/18/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "aprilevent3",
+                    name: "World Earth Day",
+                    date: "April/22/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "aprilevent4",
+                    name: "Civil Services Day",
+                    date: "April/21/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "aprilevent1",
+                    name: "World Health Day",
+                    date: "April/07/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "mayevent1",
+                    name: "World Labour Day",
+                    date: "May/01/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "mayevent2",
+                    name: "Press Freedom Day",
+                    date: "May/03/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "mayevent3",
+                    name: "World Red Cross Day",
+                    date: "May/08/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "mayevent4",
+                    name: "Anti Terrorism Day",
+                    date: "May/21/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "mayevent5",
+                    name: "Anti Tobacco Day",
+                    date: "May/31/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "juneevent1",
+                    name: "World Environment Day",
+                    date: "June/05/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "juneevent2",
+                    name: "World Ocean day",
+                    date: "June/08/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "juneevent3",
+                    name: "World Blood Donor Day",
+                    date: "June/14/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "juneevent4",
+                    name: "International Yoga Day",
+                    date: "June/21/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "juneevent5",
+                    name: "Olympic Day",
+                    date: "June/23/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "juneevent6",
+                    name: "Birthday",
+                    description: "Elon Musk's Birthday",
+                    date: "June/28/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent1",
+                    name: "World UFO Day",
+                    date: "July/02/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent2",
+                    name: "Birthday",
+                    description: "Nikola Tesla's Birthday",
+                    date: "July/10/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent3",
+                    name: "Birthday",
+                    description: "Sundar Pichai 's Birthday",
+                    date: "July/12/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent3",
+                    name: "Rath Yatra",
+                    date: "July/12/2021",
+                    type: "holiday",
+                    everyYear: false,
+                }, {
+                    id: "julyevent4",
+                    name: "World Youth Skills Day",
+                    date: "July/15/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent5",
+                    name: "National Day",
+                    description: "National Thermal Engineer Day",
+                    date: "July/24/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent6",
+                    name: "Kargil Vijay Day",
+                    date: "July/26/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent7",
+                    name: "Death anniversary",
+                    description: "Death anniversary of A. P. J. Abdul Kalam",
+                    date: "July/27/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent8",
+                    name: "World day",
+                    description: "World Nature conservation day",
+                    date: "July/28/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "julyevent9",
+                    name: "International Tiger Day",
+                    date: "July/29/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent1",
+                    name: "Hiroshima Day",
+                    date: "August/06/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent2",
+                    name: "Nagasaki Day",
+                    date: "August/09/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent3",
+                    name: "Anti Nuclear Day",
+                    date: "August/06/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent4",
+                    name: "International Youth Day",
+                    date: "August/12/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent5",
+                    name: "Birthday",
+                    description: "Vikram Sarabhai's Birthday",
+                    date: "August/12/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent6",
+                    name: "Independence Day",
+                    date: "August/15/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent7",
+                    name: "Onam",
+                    date: "August/21/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent8",
+                    name: "Rakhi",
+                    date: "August/22/2021",
+                    type: "holiday",
+                    everyYear: false,
+                }, {
+                    id: "augustevent9",
+                    name: "National Sports Day",
+                    date: "August/29/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "augustevent10",
+                    name: "Janmashtami",
+                    date: "August/30/2021",
+                    type: "holiday",
+                    everyYear: false,
+                }, {
+                    id: "septemberevent1",
+                    name: "Teacher’s Day",
+                    description: "Dr. Radhakrishnan’s birthday",
+                    date: "September/05/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "septemberevent2",
+                    name: "World Forgiveness Day",
+                    date: "September/07/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "septemberevent3",
+                    name: "Engineer’s day",
+                    description: "Engineer’s day in India",
+                    date: "September/15/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "septemberevent4",
+                    name: "World Ozone Day",
+                    date: "September/16/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "septemberevent5",
+                    name: "World Rabies Day",
+                    date: "September/28/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent1",
+                    name: "World Space Week",
+                    // badge: "10/04 - 10/10",
+                    date: ["October/04/2021", "October/10/2021"],
+                    type: "event",
+                    everyYear: true,
+                    color: "#63d867",
+                }, {
+                    id: "octoberevent2",
+                    name: "Birthday",
+                    description: "Mahatma Gandhi birthday",
+                    date: "October/02/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent3",
+                    name: "World Teacher’s day",
+                    date: "October/05/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent4",
+                    name: "Navratri begins",
+                    date: "October/07/2021",
+                    type: "holiday",
+                    everyYear: false,
+                }, {
+                    id: "octoberevent5",
+                    name: "Indian Air Force Day",
+                    date: "October/08/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent6",
+                    name: "World Day",
+                    description: "World Mental Health Day",
+                    date: "October/10/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent7",
+                    name: "World Standards Day",
+                    date: "October/14/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent8",
+                    name: "Birthday",
+                    description: " A. P. J. Abdul Kalam's Birthday",
+                    date: "October/15/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent9",
+                    name: "Dussehra",
+                    date: "October/15/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent10",
+                    name: "Statistics day",
+                    date: "October/20/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent11",
+                    name: "Day",
+                    description: "World development information Day",
+                    date: "October/24/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent12",
+                    name: "Animation Day",
+                    date: "October/28/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent13",
+                    name: "Birthday",
+                    description: "Bill Gates' birthday",
+                    date: "October/28/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent14",
+                    name: "Halloween Day",
+                    date: "October/31/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "octoberevent15",
+                    name: "Rastriya Ekta Diwas",
+                    description: "in memory of Sardar Patel's Birthday",
+                    date: "October/31/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent1",
+                    name: "Diwali",
+                    date: "November/04/2021",
+                    type: "holiday",
+                    everyYear: false,
+                }, {
+                    id: "novemberevent2",
+                    name: "New year",
+                    date: "November/05/2021",
+                    type: "holiday",
+                    everyYear: false,
+                }, {
+                    id: "novemberevent3",
+                    name: "Birthday",
+                    description: "C.V Raman 's Birthday",
+                    date: "November/01/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent4",
+                    name: "World Radiology Day",
+                    date: "November/08/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent5",
+                    name: "International week of science and peace",
+                    // badge: "11/09 - 11/15",
+                    date: ["November/09/2021", "November/15/2021"],
+                    type: "event",
+                    everyYear: true,
+                    color: "#63d867",
+                }, {
+                    id: "novemberevent6",
+                    name: "World Science Day",
+                    date: "November/10/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent7",
+                    name: "Children’s Day",
+                    date: "November/14/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent8",
+                    name: "Students' Day",
+                    date: "November/17/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent9",
+                    name: "Television Day",
+                    date: "November/21/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent10",
+                    name: "Constitution Day",
+                    date: "November/26/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "novemberevent11",
+                    name: "National Flag Day",
+                    date: "November/30/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent1",
+                    name: "World Aids Day",
+                    date: "December/01/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent2",
+                    name: "Computer literacy day",
+                    date: "December/02/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent3",
+                    name: "Indian Navy Day",
+                    date: "December/04/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent4",
+                    name: "World Human Rights Day",
+                    date: "December/10/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent5",
+                    name: "UNICEF Day",
+                    date: "December/11/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent6",
+                    name: "Conservation Day",
+                    description: "National Energy Conservation Day",
+                    date: "December/14/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent7",
+                    name: "Mathematics Day",
+                    date: "December/22/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent6",
+                    name: "Birthay",
+                    description: "Srinivasa Ramanujan's Birthday",
+                    date: "December/22/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent4",
+                    name: "National Farmer’s Day",
+                    date: "December/23/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, {
+                    id: "decemberevent5",
+                    name: "Christmas Day",
+                    date: "December/25/2021",
+                    type: "holiday",
+                    everyYear: true,
+                }, ],
+            });
+        });
+    </script>
+</body>
+
+</html>
